@@ -1,5 +1,65 @@
+/* CSS DE LA MISE EN PAGE <3
 
-/* CSS DE LA MISE EN PAGE */
+     • Compléments du QEEL, des profils et des messages privés
+     • Modèles RP de CJRPV11
+     • Fond, bannière et structure de la page
+     • Textes, titres, liens et boutons
+     • Navigation et notifications
+     • Barre latérale et changement de compte
+     • Accueil, actualités et liens utiles
+     • Catégories et forums
+     • Liste des sujets et pagination
+     • Messages et éditeur
+     • Profils et champs personnalisés
+     • Profils en fenêtre
+     • Liste des membres et Directory
+     • Qui est en ligne
+     • Blogs et réseaux sociaux
+     • Balises, fiches et modèles RP
+     • Chatbox, badges et carte
+     • Anciens modèles de messages
+     • Éléments du thème
+     • Mise en page de l’accueil
+     • Structure des pages et éléments communs
+     • Badges
+     • Chatbox
+     • Navigation et Messenger
+     • Carte des logements
+     • Mise en page des sujets
+     • Balises et fiches
+     • Mise en page du Qui est en ligne
+     • Modèles RP
+     • Fenêtres de profil
+     • Présentation de la liste des sujets
+     • Autres fiches
+     • Compatibilité avec les anciens éléments
+     • Titres, sujets et pré-liens
+     • Finitions des catégories
+     • Anciens contenus et templates
+     • Finitions de la navigation et des comptes
+     • Profils dans les messages
+     • Actions et pagination des sujets
+     • Lecture des sujets et outils associés
+     • Finitions des fenêtres de profil
+     • Finitions des fiches et des onglets
+     • Palette actuelle et derniers réglages
+     • Hauteur des lignes de sujets
+     • Présentation de la boîte de réception
+     • Taille des images dans la chatbox
+     • Smileys dans les fiches
+     • Smileys et emojis dans Crush Hour
+     • Images dans les messages privés
+     • Boutons de la messagerie privée
+     • Chronologies
+     • En-tête des stories Instagram
+     • Navigation sur mobile
+     • Icônes des groupes
+     • Barre latérale déplaçable
+     • Lettres animées des titres de forum
+
+*/
+
+/* Compléments récupérés */
 
 /* Compléments du QEEL, des profils et des messages privés */
 
@@ -892,7 +952,9 @@ form[name="privmsg_list"] .mp_infos {
   justify-content: center;
 }
 
-/* Balises de couleur personnelles */
+
+
+/* Les bases de la mise en page */
 
 /* ──────────────────────────────────────────────────────────
    Fond, bannière et structure de la page
@@ -3604,7 +3666,7 @@ html body :is(.prez, .fiche-presentation) :is(.fiche-st, .fiche_st, .fiche-secti
   flex: 0 0 auto;
 }
 
-html :is(b1,b2,b3,b4,b5,b6,c1,c2,c3,c4,c5,c6,i1,i2,i3,i4,i5,i6,u1,u2,u3,u4,u5,u6,s1,s2,s3,s4,s5,s6,w1,w2,w3,w4,w5,w6,r1,r2,r3,r4,r5,r6,rr1,rr2,rr3,rr4,rr5,rr6,bg1,bg2,bg3,bg4,bg5,bg6,bg7,bg8,bg9,bg10,t1,t2,t3,t4,t5,t22,t33,bb,ii,uu,ua,ti,ti1,in,yn,an,st,stt,vl,tw,wf,dc,sd,cs,rioma,fauve,int,pride,lesbian,gay,trans,bisexual,pan,asexual,nonbinary,fr) {
+html :is(b1,b2,b3,b4,b5,b6,c1,c2,c3,c4,c5,c6,i1,i2,i3,i4,i5,i6,u1,u2,u3,u4,u5,u6,s1,s2,s3,s4,s5,s6,w1,w2,w3,w4,w5,w6,r1,r2,r3,r4,r5,r6,rr1,rr2,rr3,rr4,rr5,rr6,bg1,bg2,bg3,bg4,bg5,bg6,bg7,bg8,bg9,bg10,t1,t2,t3,t4,t5,t22,t33,bb,ii,uu,ua,ti,ti1,in,yn,an,st,stt,vl,tw,wf,dc,sd,cs,int,pride,lesbian,gay,trans,bisexual,pan,asexual,nonbinary,fr) {
   box-sizing: border-box;
   overflow-wrap: anywhere;
 }
@@ -4206,6 +4268,8 @@ body.chatbox #chatbox_footer {
 .cj-housing-map .cjhm-viewport {
   overscroll-behavior: contain;
 }
+
+/* Les composants du forum */
 
 /* ──────────────────────────────────────────────────────────
    Anciens modèles de messages
@@ -11862,6 +11926,8 @@ html body #page-header > br:has(+ .fiche-fond) {
   display: none !important;
 }
 
+/* Les ajustements du forum */
+
 /* ──────────────────────────────────────────────────────────
    Finitions des catégories
    ────────────────────────────────────────────────────────── */
@@ -19105,6 +19171,8 @@ html body a#header::before, html body a#header::after {
   transform: scale(1,-1);
 }
 
+/* Les dernières retouches */
+
 /* ──────────────────────────────────────────────────────────
    Hauteur des lignes de sujets
    ────────────────────────────────────────────────────────── */
@@ -19720,7 +19788,10 @@ html body #cj-rail-navbar #switcheroo .cj-switcheroo-dropdown .switcheroo__poppe
   }
 }
 
-/* Apparence des composants, reliee aux couleurs du panneau CSS. */
+/* Apparence des composants
+   Habillage, polices et animations. Les couleurs sont reliées aux variables
+   de la feuille principale, à modifier dans le panneau CSS du forum.
+*/
 
 @font-face {
   font-family: "Luciole";
@@ -22028,7 +22099,7 @@ html:not([data-color-scheme="dark"]) body:not([data-color-scheme="dark"]) :is(.f
   -webkit-backdrop-filter: none !important;
 }
 
-html :is(b1,b2,b3,b4,b5,b6,c1,c2,c3,c4,c5,c6,i1,i2,i3,i4,i5,i6,u1,u2,u3,u4,u5,u6,s1,s2,s3,s4,s5,s6,w1,w2,w3,w4,w5,w6,r1,r2,r3,r4,r5,r6,rr1,rr2,rr3,rr4,rr5,rr6,bg1,bg2,bg3,bg4,bg5,bg6,bg7,bg8,bg9,bg10,t1,t2,t3,t4,t5,t22,t33,bb,ii,uu,ua,ti,ti1,in,yn,an,st,stt,vl,tw,wf,dc,sd,cs,rioma,fauve,int,pride,lesbian,gay,trans,bisexual,pan,asexual,nonbinary,fr) {
+html :is(b1,b2,b3,b4,b5,b6,c1,c2,c3,c4,c5,c6,i1,i2,i3,i4,i5,i6,u1,u2,u3,u4,u5,u6,s1,s2,s3,s4,s5,s6,w1,w2,w3,w4,w5,w6,r1,r2,r3,r4,r5,r6,rr1,rr2,rr3,rr4,rr5,rr6,bg1,bg2,bg3,bg4,bg5,bg6,bg7,bg8,bg9,bg10,t1,t2,t3,t4,t5,t22,t33,bb,ii,uu,ua,ti,ti1,in,yn,an,st,stt,vl,tw,wf,dc,sd,cs,int,pride,lesbian,gay,trans,bisexual,pan,asexual,nonbinary,fr) {
   background: none;
   color: var(--cjf-ink);
   -webkit-text-fill-color: currentColor !important;
@@ -22239,13 +22310,9 @@ html cs {
   color: var(--cs,var(--cjf-accent));
 }
 
-html rioma {
-  color: var(--cj-fixe-926009);
-}
 
-html fauve {
-  color: var(--cj-fixe-a93c4c);
-}
+
+
 
 html fr {
   border: 0;
@@ -26286,17 +26353,11 @@ html vl {
   font-weight: 600;
 }
 
-html rioma {
-  font-weight: 600;
-}
 
-[data-color-scheme="dark"] rioma {
-  color: var(--cj-fixe-edc477);
-}
 
-[data-color-scheme="dark"] fauve {
-  color: var(--cj-fixe-e19a9f);
-}
+
+
+
 
 html pride {
   font-weight: 600;
@@ -31871,14 +31932,9 @@ img.lsh_de {
   background: linear-gradient(110deg, var(--cjf-accent), var(--cjf-second));
 }
 
-rioma {
-  color: var(--cj-fixe-f5b027);
-  font-weight: 500;
-}
 
-fauve {
-  color: var(--cj-fixe-cd5c5c);
-}
+
+
 
 .sms-right:before {
   color: var(--neutral) !important;
