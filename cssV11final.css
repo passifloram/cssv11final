@@ -56,6 +56,7 @@
      • Icônes des groupes
      • Barre latérale déplaçable
      • Lettres animées des titres de forum
+     • Zone de rédaction pleine largeur sur Messenger
 
 */
 
@@ -33086,4 +33087,25 @@ html body #FAM {
   .cjcat .cjcat-name .cj-title-letter {
     transition: none;
   }
+}
+
+/* zone de rédaction pleine largeur sur Messenger */
+#FAM #FAM-actions {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 8px;
+}
+
+#FAM #FAM-msg-container,
+#FAM #FAM-msg {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+#FAM #FAM-msg {
+  margin: 0 !important;
 }
