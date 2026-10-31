@@ -20159,8 +20159,8 @@ form[name="privmsg_list"] .mp_infos > span * {
 .cjrp .cjrp-title {
   border: 0px;
   background: none;
-  color: var(--rp-ink);
-  -webkit-text-fill-color: currentcolor;
+  color: var(--one);
+  -webkit-text-fill-color: currentColor;
   font: 400 clamp(27px, 4vw, 38px) / 1.18 "Abril Fatface", serif;
   letter-spacing: -0.025em;
   text-transform: none;
