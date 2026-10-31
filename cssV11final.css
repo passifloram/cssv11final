@@ -611,6 +611,7 @@ form[name="privmsg_list"] .mp_infos {
   margin: 0px;
   padding: 0px;
   text-align: left;
+  color: var(--one);
 }
 
 .cjrp .cjrp-subtitle {
