@@ -33110,3 +33110,543 @@ html body #FAM {
 #FAM #FAM-msg {
   margin: 0 !important;
 }
+
+
+/* CONCRETE JUNGLE — styles sortis des JavaScript
+   À ajouter à la FIN du CSS externe de mise en page.
+   Installer ce CSS AVANT les versions JavaScript allégées.
+   Les couleurs existantes sont conservées.
+
+   SOMMAIRE — Ctrl + F
+   CJ-10 : Copier le contenu des blocs de code
+   CJ-42 : Barre latérale mobile
+   CJ-44 : Version mobile
+   CJ-53 : Bannière canvas
+   CJ-56 : Messenger : lecture des contenus sociaux
+   CJ-58 : Bouton UserWay
+   CJ-60 : Symboles des groupes
+   CJ-61 : Finitions, navigation, Cloud Nine et SMS
+   CJ-34 : disposition des profils et fiches
+*/
+
+/* ==================== CJ-10 — Copier le contenu des blocs de code ==================== */
+.fae_copy-code{float:right;cursor:pointer;}.fae_copy-code:hover{text-decoration:underline}
+
+/* ==================== CJ-61 — Finitions, navigation, Cloud Nine et SMS ==================== */
+
+    .topicslist-stats { flex-shrink:0!important; min-width:90px!important; width:auto!important; white-space:nowrap!important; text-align:center!important; }
+    .newpm_button a::after { content:none!important; }
+    body[data-cj-space="cloud"] .blog_post { min-width:0; }
+    .cjcloud-first { display:block; width:100%; min-width:0; }
+    .cjcloud-first-left { display:flex; align-items:center; gap:12px; margin:0 0 20px; }
+    .cjcloud-first-left > br { display:none; }
+    .cjcloud-crea img,.cjcloud-ava img { width:48px!important; height:48px!important; object-fit:cover; border-radius:50%; }
+    .cjcloud-first-right { width:100%; min-width:0; }
+    .cjcloud-first-right .postbody { width:100%; min-width:0; box-sizing:border-box; }
+    .cjcloud-first-right .prez,.cjcloud-first-right .fiche-presentation { width:100%!important; max-width:100%!important; box-sizing:border-box; }
+    .cjcloud-comments { margin:20px 0; }
+    .cjcloud-comments > center { text-align:left; }
+    .cjcloud-box { display:grid; grid-template-columns:48px minmax(0,1fr); gap:16px; padding:20px; border-radius:12px; background:var(--neutral,transparent); }
+    .cjcloud-right { min-width:0; }
+    .cjcloud-right > br { display:none; }
+    .cjcloud-edit { display:flex; justify-content:flex-end; }
+    .cjcloud-mess-top { margin-bottom:12px; font-weight:bold; }
+    .cjcloud-mess-bottom { width:100%; min-width:0; overflow-wrap:anywhere; }
+    .cjcloud-mess-bottom > * { max-width:100%; box-sizing:border-box; }
+    .cjcloud-date { margin-top:12px; font-size:.85em; opacity:.7; }
+    @media(max-width:600px){.cjcloud-box{grid-template-columns:minmax(0,1fr);padding:12px;}}
+  
+/* CJ — navigation basse, modération, blogs et SMS.
+   Chargé par le script de finitions ; conserver ce fichier comme correctif CSS. */
+
+/* Navigation également disponible au pied des sujets et listes. */
+.cj-bottom-navigation {
+  clear: both;
+  display: block;
+  margin: 12px 0;
+  padding: 18px;
+  border-radius: 10px;
+  background: var(--neutralTwo);
+  color: var(--textColor);
+  line-height: 1.6;
+}
+.cj-bottom-navigation .navigation_chain {
+  display: block; margin: 0 0 10px !important; padding: 0 !important;
+  font-size: 14px !important; font-weight: 600 !important;
+  line-height: 1.6 !important; color: var(--textColorAccent) !important;
+}
+.cj-bottom-navigation a {
+  color: var(--textColorAccent); font-size: 16px !important;
+  font-weight: 600 !important; line-height: 1.6 !important;
+  margin: 0 8px 0 0; padding: 0;
+}
+
+/* Les actions restent les mêmes ; seules leurs icônes changent. */
+form.cj-moderation-tools {
+  float: none !important;
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
+  width: 100%; box-sizing: border-box; padding: 14px 16px;
+  border-radius: 12px; background: var(--neutralTwo);
+}
+.cj-moderation-tools .quickmod {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+  border: 0; margin: 0; padding: 0;
+}
+.cj-moderation-tools > .right { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; float: none !important; font-size: 0; }
+.cj-moderation-tools .cj-mod-action {
+  display: inline-flex !important; align-items: center; justify-content: center;
+  width: 34px; height: 34px; padding: 0 !important; border: 1px solid transparent;
+  border-radius: 9px; background: var(--neutral) !important;
+  color: var(--textColor) !important; font-size: 14px; line-height: 1;
+  box-shadow: none !important; text-decoration: none;
+}
+.cj-moderation-tools .cj-mod-action:hover { border-color: var(--accentClr); color: var(--accentClr) !important; }
+.cj-moderation-tools .cj-mod-action[data-action="delete"] { color: var(--textColorAccent) !important; }
+.cj-mod-action::before { content: attr(data-icon); font-family: 'CJ Sujet Icons'; font-weight: 900; }
+
+/* Deux lignes stables : nombre + libellé, puis nombre + vues. */
+.bloglist_details {
+  display: block !important; flex: 0 0 106px !important;
+  width: 106px !important; min-width: 106px !important;
+  padding: 0 !important; text-align: center !important;
+  white-space: nowrap !important; line-height: 1.9 !important;
+}
+.bloglist_details l { display: inline !important; margin: 0 4px 0 0 !important; }
+.bloglist_details br { display: block !important; }
+.bloglist_infos2 { gap: 12px !important; align-items: center !important; }
+
+/* Boutons des blogs identiques aux actions des messages classiques. */
+:is(.blog_details,.sms-edit,.cjcloud-edit) .profile-icons {
+  display: flex !important; align-items: center; justify-content: flex-end;
+  gap: 12px; list-style: none; margin: 0 !important; padding: 0 !important;
+}
+:is(.blog_details,.sms-edit,.cjcloud-edit) .profile-icons li { display: flex; align-items: center; margin: 0 !important; }
+:is(.blog_details,.sms-edit,.cjcloud-edit) .profile-icons li > i { display: none !important; }
+:is(.blog_details,.sms-edit,.cjcloud-edit) .profile-icons a {
+  display: inline-flex !important; align-items: center; justify-content: center;
+  width: 24px; height: 28px; padding: 0 !important; background: transparent !important;
+  border: 0 !important; box-shadow: none !important;
+  color: var(--textColor) !important; text-decoration: none;
+}
+:is(.blog_details,.sms-edit,.cjcloud-edit) .profile-icons a[href*="mode="] { font-size: 0 !important; }
+:is(.blog_details,.sms-edit,.cjcloud-edit) .profile-icons a[href*="mode="]::before { font-family: 'CJ Sujet Icons'; font-size: 13px; font-weight: 900; }
+:is(.blog_details,.sms-edit,.cjcloud-edit) .profile-icons a[href*="mode=quote"]::before { content: '\f10e'; }
+:is(.blog_details,.sms-edit,.cjcloud-edit) .profile-icons a[href*="mode=editpost"]::before { content: '\f303'; }
+:is(.blog_details,.sms-edit,.cjcloud-edit) .profile-icons a[href*="mode=delete"]::before { content: '\f2ed'; }
+:is(.blog_details,.sms-edit,.cjcloud-edit) .profile-icons a[href*="mode=ip"]::before { content: '\f05a'; }
+:is(.blog_details,.sms-edit,.cjcloud-edit) .profile-icons a[href*="mode=delete"] { color: #d26a70 !important; }
+:is(.blog_details,.sms-edit,.cjcloud-edit) .profile-icons a:hover { color: var(--accentClr) !important; }
+
+/* Direct Messages uniquement : Cloud Nine possède ses propres classes. */
+body[data-cj-space="sms"] .sms-first {
+  display: grid !important; grid-template-columns: 150px minmax(0,1fr) !important;
+  align-items: center; gap: 24px !important; width: 100% !important;
+  max-width: 660px; margin: 0 auto !important; padding: 20px 0 !important;
+  border: 0 !important; box-sizing: border-box;
+}
+body[data-cj-space="sms"] .sms-first-left { width: auto !important; min-width: 0; }
+body[data-cj-space="sms"] .sms-crea img { width: 110px !important; height: 110px !important; object-fit: cover; border-radius: 50%; }
+body[data-cj-space="sms"] .sms-first-right { display: block !important; width: auto !important; min-width: 0; margin: 0 !important; }
+body[data-cj-space="sms"] .sms-first-right .postbody { width: 100% !important; padding: 0 !important; background: transparent !important; box-sizing: border-box; }
+body[data-cj-space="sms"] .sms-fond {
+  width: 100% !important; margin: 16px 0 0 !important; padding: 12px !important;
+  border: 0 !important; border-radius: 12px; background: var(--neutralTwo) !important;
+  box-sizing: border-box;
+}
+body[data-cj-space="sms"] .sms-fond > br,
+body[data-cj-space="sms"] .sms-top > br { display: none !important; }
+body[data-cj-space="sms"] .sms-top {
+  display: flex !important; align-items: center; gap: 12px;
+  width: 100% !important; min-height: 0 !important; margin: 0 !important;
+  padding: 10px !important; background: transparent !important; box-sizing: border-box;
+}
+body[data-cj-space="sms"] .sms-top-l { position: relative; flex: 0 0 40px; width: 40px !important; height: 40px !important; }
+body[data-cj-space="sms"] .sms-top-ava { width: 40px !important; height: 40px !important; object-fit: cover; border-radius: 50%; }
+body[data-cj-space="sms"] .sms-top-r { width: auto !important; min-width: 0; min-height: 0 !important; margin: 0 !important; text-align: left; }
+body[data-cj-space="sms"] .wrapped-sms { display: block !important; width: 100% !important; margin: 24px 0 !important; padding: 0 !important; }
+body[data-cj-space="sms"] .wrapped-sms > center { text-align: left; }
+body[data-cj-space="sms"] .sms-box {
+  display: grid !important; grid-template-columns: 56px minmax(0,1fr) !important;
+  align-items: start; gap: 14px !important; width: 100% !important; max-width: 660px;
+  margin: 0 auto !important; padding: 0 !important; border: 0 !important; box-sizing: border-box;
+}
+body[data-cj-space="sms"] .sms-left { width: 56px !important; padding-top: 38px; }
+body[data-cj-space="sms"] .sms-ava img { width: 56px !important; height: 56px !important; object-fit: cover; border-radius: 12px; }
+body[data-cj-space="sms"] .sms-right {
+  width: auto !important; min-width: 0; margin: 0 !important; padding: 0 !important;
+  border: 0 !important; background: transparent !important; box-shadow: none !important;
+}
+body[data-cj-space="sms"] .sms-right::before,
+body[data-cj-space="sms"] .sms-right::after { content: none !important; }
+body[data-cj-space="sms"] .sms-right > br { display: none !important; }
+body[data-cj-space="sms"] .sms-edit { display: flex !important; justify-content: flex-end; margin-bottom: 8px; }
+body[data-cj-space="sms"] .sms-mess-top {
+  padding: 10px 16px !important; border: 0 !important; border-radius: 12px 12px 0 0;
+  background: var(--neutralTwo) !important;
+}
+body[data-cj-space="sms"] .sms-mess-bottom {
+  padding: 16px !important; border: 0 !important; border-radius: 0 0 12px 12px;
+  background: var(--neutral) !important; line-height: 1.65; overflow-wrap: anywhere;
+}
+body[data-cj-space="sms"] .sms-date { margin-top: 8px; padding: 0 !important; font-size: 11px; background: transparent !important; }
+@media(max-width:600px) {
+  body[data-cj-space="sms"] .sms-first { grid-template-columns: minmax(0,1fr) !important; gap: 16px !important; }
+  body[data-cj-space="sms"] .sms-box { grid-template-columns: 40px minmax(0,1fr) !important; gap: 10px !important; }
+  body[data-cj-space="sms"] .sms-left { width: 40px !important; }
+  body[data-cj-space="sms"] .sms-ava img { width: 40px !important; height: 40px !important; }
+}
+
+/* Sombre uniquement : les pseudos sans groupe se distinguent du rose des groupes. */
+html[data-color-scheme="dark"] :is(#online_users,#last_connected) a[href^="/u"]:not(:has(.usr_grp_clr)) {
+  color: #a6cdde !important;
+}
+
+
+/* ==================== Messenger : lecture des contenus sociaux ==================== */
+
+  #FAM .FAM-msg-content,#FAM .FAM-msg-box,#FAM .FAM-msg-text { min-width:0; max-width:100%; box-sizing:border-box; }
+  #FAM .FAM-cjfam-reader { width:100%; min-width:0; line-height:1.55; overflow-wrap:anywhere; }
+  #FAM .FAM-cjfam-reader * { box-sizing:border-box; max-width:100%; min-width:0; position:static; float:none; }
+  #FAM .FAM-cjfam-reader div,#FAM .FAM-cjfam-reader section,#FAM .FAM-cjfam-reader article { display:block; width:auto; height:auto; }
+  #FAM .FAM-cjfam-reader p { margin:10px 0; }
+  #FAM .FAM-cjfam-reader span { display:inline-block; margin-right:.3em; }
+  #FAM .FAM-cjfam-reader dl,#FAM .FAM-cjfam-reader dt,#FAM .FAM-cjfam-reader dd { display:block; width:100%; min-width:0; max-width:100%; margin:8px 0; }
+  #FAM .FAM-cjfam-reader img { max-width:100%; max-height:320px; width:auto; height:auto; object-fit:contain; vertical-align:middle; }
+  #FAM .FAM-cjfam-reader img[src*="/smiles/"] { max-height:2em; }
+  #FAM .FAM-cjfam-reader pre,#FAM .FAM-cjfam-reader code { white-space:pre-wrap; overflow-wrap:anywhere; }
+  #FAM .FAM-cjfam-reader table { width:100%; table-layout:fixed; }
+  #FAM .FAM-cjfam-reader iframe { max-width:100%; }
+  #FAM .FAM-cjfam-heading,#FAM .FAM-cjfam-reader h1,#FAM .FAM-cjfam-reader h2,#FAM .FAM-cjfam-reader h3 { display:block; font-size:1.15em; font-weight:bold; line-height:1.3; margin:16px 0 8px; }
+  #FAM .FAM-cjfam-reader [class*="panel"] { display:block!important; }
+
+
+/* ==================== Symboles des groupes ==================== */
+/* Groupes CJ : 4 wild, 5 domesticated, 6 starved, 7 caged. */
+html body :is(.post_pseudo, .cj-profile__name) .usr_grp_clr.group-3::after { content: none !important; }
+html body :is(.post_pseudo, .cj-profile__name) .usr_grp_clr.group-4 { --cj-group-symbol: "\e4dc"; }
+html body :is(.post_pseudo, .cj-profile__name) .usr_grp_clr.group-5 { --cj-group-symbol: "\e445"; }
+html body :is(.post_pseudo, .cj-profile__name) .usr_grp_clr.group-6 { --cj-group-symbol: "\f0e9"; }
+html body :is(.post_pseudo, .cj-profile__name) .usr_grp_clr.group-7 { --cj-group-symbol: "\f7a9"; }
+html body :is(.post_pseudo, .cj-profile__name) .usr_grp_clr:is(.group-4,.group-5,.group-6,.group-7)::after {
+ /* Le symbole est fixé par groupe dans les règles ci-dessous. */
+ display: inline-block; margin-inline-start: .4em; vertical-align: .06em;
+ font-family: "Font Awesome 6 Free" !important; font-weight: 900 !important;
+ font-style: normal !important; font-size: .65em !important; line-height: 1 !important;
+ font-variant: normal; letter-spacing: 0; text-transform: none;
+ color: inherit !important; -webkit-text-fill-color: currentColor; text-shadow: none;
+}
+
+html body :is(.post_pseudo, .cj-profile__name) .usr_grp_clr.group-4::after { content: "\e4dc" !important; }
+
+html body :is(.post_pseudo, .cj-profile__name) .usr_grp_clr.group-5::after { content: "\e445" !important; }
+
+html body :is(.post_pseudo, .cj-profile__name) .usr_grp_clr.group-6::after { content: "\f0e9" !important; }
+
+html body :is(.post_pseudo, .cj-profile__name) .usr_grp_clr.group-7::after { content: "\f7a9" !important; }
+
+
+/* ==================== Bouton UserWay ==================== */
+.sidebar #cj-userway-button{display:flex!important;align-items:center;justify-content:center;flex:0 0 auto;width:38px;height:38px;min-width:0;min-height:0;padding:7px!important;margin:0 auto 4px!important;box-sizing:border-box;border:0!important;border-radius:50%;background:transparent!important;color:var(--one,currentColor)!important;cursor:pointer;line-height:1;}.sidebar #cj-userway-button svg{display:block;width:24px;height:24px;flex:none;pointer-events:none;}.sidebar #cj-userway-button:hover{box-shadow:inset 0 0 0 1px currentColor;}.sidebar #cj-userway-button:focus-visible{outline:2px solid currentColor!important;outline-offset:2px;}
+
+/* ==================== Bannière canvas ==================== */
+html body #cj-banner-background{overflow:hidden!important;}html body #cj-banner-background.cj-canvas-ready{background-image:none!important;}html body #cj-banner-background>canvas.cj-banner-canvas{display:block!important;position:absolute!important;visibility:hidden!important;width:calc(100% / .969)!important;height:calc(100% / .943)!important;left:calc(-.011 * 100% / .969)!important;top:calc(-.022 * 100% / .943)!important;max-width:none!important;max-height:none!important;min-width:0!important;margin:0!important;padding:0!important;border:0!important;pointer-events:none!important;}html body #cj-banner-background.cj-canvas-ready>canvas.cj-banner-canvas{visibility:visible!important;}
+
+/* ==================== Version mobile ==================== */
+/* Le forum tient dans l'écran ; ses barres restent indépendantes du zoom. */
+html[data-cj-mobile="on"],
+html[data-cj-mobile="on"] body#phpbb {
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+#cj-mobile-forum-frame { display: contents; }
+html[data-cj-mobile="on"] body#phpbb #cj-mobile-forum-frame {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  width: calc(100% - 16px);
+  height: var(--cj-forum-height, 1px);
+  margin: calc(50vh - 40px) 8px 24px;
+  margin-top: calc(50svh - 40px);
+  overflow: hidden;
+  overflow: clip;
+}
+html[data-cj-mobile="on"] body#phpbb #cj-mobile-forum-frame > .main_forum {
+  position: absolute !important;
+  top: var(--cj-forum-offset, 0px) !important;
+  left: 0 !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 930px !important;
+  min-width: 930px !important;
+  max-width: 930px !important;
+  box-sizing: border-box !important;
+  transform-origin: 0 0 !important;
+  transform: scale(var(--cj-forum-scale, 1)) !important;
+  transition: none !important;
+}
+
+/* Même disposition du QEEL sur le forum réduit. */
+html[data-cj-mobile="on"] body#phpbb .cj-qeel {
+  grid-template-columns: var(--qeel-side, 100px) minmax(0, 1fr) var(--qeel-side, 100px) !important;
+  grid-template-rows: auto !important;
+  min-height: 260px !important;
+}
+html[data-cj-mobile="on"] body#phpbb .cj-qeel .cjq-groups {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  min-width: 0 !important;
+  min-height: 260px !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(2, minmax(130px, 1fr)) !important;
+}
+html[data-cj-mobile="on"] body#phpbb .cj-qeel .cjq-group img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+}
+html[data-cj-mobile="on"] body#phpbb .cj-qeel .cjq-center {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  min-width: 0 !important;
+}
+html[data-cj-mobile="on"] body#phpbb .cj-qeel #last_user {
+  position: relative !important;
+  grid-column: 3 !important;
+  grid-row: 1 !important;
+  min-width: 0 !important;
+  min-height: 260px !important;
+  width: 100% !important;
+}
+
+/* Boutons de 35 pixels visibles, y compris pendant un zoom. */
+html[data-cj-mobile="on"] body#phpbb .navbar,
+html[data-cj-mobile="on"] body#phpbb .sidebar {
+  position: fixed !important;
+  box-sizing: border-box !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  transform-origin: 0 0 !important;
+  transform: scale(var(--cj-nav-scale, 1)) !important;
+  transition: none !important;
+}
+html[data-cj-mobile="on"] body#phpbb .navbar {
+  display: grid !important;
+  grid-template-columns: repeat(var(--cj-nav-columns, 7), 35px) !important;
+  grid-auto-rows: 35px !important;
+  justify-content: center !important;
+  align-content: center !important;
+  align-items: center !important;
+  gap: 3px !important;
+  padding: 6px !important;
+  width: var(--cj-nav-width, 100%) !important;
+  max-width: none !important;
+  height: auto !important;
+  min-height: 50px !important;
+  left: var(--cj-nav-left, 0px) !important;
+  top: var(--cj-nav-top, 0px) !important;
+  overflow: visible !important;
+}
+html[data-cj-mobile="on"] body#phpbb .navbar::before,
+html[data-cj-mobile="on"] body#phpbb .navbar::after { content: none !important; }
+html[data-cj-mobile="on"] body#phpbb .navbar > li { display: contents !important; }
+html[data-cj-mobile="on"] body#phpbb .navbar a.mainmenu,
+html[data-cj-mobile="on"] body#phpbb .navbar #fa_notifications {
+  box-sizing: border-box !important;
+  flex: 0 0 35px !important;
+  width: 35px !important;
+  min-width: 35px !important;
+  max-width: 35px !important;
+  height: 35px !important;
+  min-height: 35px !important;
+  max-height: 35px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0 !important;
+  font-size: 0 !important;
+  line-height: 1 !important;
+}
+html[data-cj-mobile="on"] body#phpbb .navbar a.mainmenu::before,
+html[data-cj-mobile="on"] body#phpbb .navbar #fa_notifications::before {
+  flex: 0 0 22px !important;
+  width: 22px !important;
+  height: 22px !important;
+  font-size: 22px !important;
+  line-height: 22px !important;
+}
+
+html[data-cj-mobile="on"] body#phpbb .sidebar {
+  --cj-touch-button: 35px;
+  display: grid !important;
+  grid-template-columns: repeat(var(--cj-side-columns, 1), 35px) !important;
+  grid-auto-rows: 35px !important;
+  align-content: start !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  padding: 6px !important;
+  width: max-content !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: var(--cj-side-max-height, none) !important;
+  left: var(--cj-side-left, 0px) !important;
+  top: var(--cj-side-top, 0px) !important;
+  overflow: visible !important;
+}
+html[data-cj-mobile="on"][data-cj-side-scroll="on"] body#phpbb .sidebar {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+html[data-cj-mobile="on"] body#phpbb .sidebar .sidebar_top,
+html[data-cj-mobile="on"] body#phpbb .sidebar .sidebar_bottom,
+html[data-cj-mobile="on"] body#phpbb .sidebar #switcheroo,
+html[data-cj-mobile="on"] body#phpbb .sidebar #switcheroo > .switcheroo__squircles {
+  display: contents !important;
+}
+html[data-cj-mobile="on"] body#phpbb .sidebar .switch-theme,
+html[data-cj-mobile="on"] body#phpbb .sidebar .switch-theme > div,
+html[data-cj-mobile="on"] body#phpbb .sidebar .switch-theme [data-theme-controls],
+html[data-cj-mobile="on"] body#phpbb .sidebar .color-scheme-toggle,
+html[data-cj-mobile="on"] body#phpbb .sidebar #switcheroo .forum-layout-toggle,
+html[data-cj-mobile="on"] body#phpbb .sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle,
+html[data-cj-mobile="on"] body#phpbb .sidebar #FAM-button,
+html[data-cj-mobile="on"] body#phpbb .sidebar #FAM-button-open,
+html[data-cj-mobile="on"] body#phpbb .sidebar .sidebar_bottom > a {
+  box-sizing: border-box !important;
+  flex: 0 0 35px !important;
+  width: 35px !important;
+  min-width: 35px !important;
+  max-width: 35px !important;
+  height: 35px !important;
+  min-height: 35px !important;
+  max-height: 35px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+html[data-cj-mobile="on"] body#phpbb .sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle.active > a,
+html[data-cj-mobile="on"] body#phpbb .sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle:not(.cj-switcheroo-toggle) .switcheroo__avatar,
+html[data-cj-mobile="on"] body#phpbb .sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle:not(.cj-switcheroo-toggle) .switcheroo__avatar img {
+  box-sizing: border-box !important;
+  width: 35px !important;
+  min-width: 35px !important;
+  max-width: 35px !important;
+  height: 35px !important;
+  min-height: 35px !important;
+  max-height: 35px !important;
+  object-fit: cover !important;
+}
+html[data-cj-mobile="on"] body#phpbb .sidebar .color-scheme-toggle::before,
+html[data-cj-mobile="on"] body#phpbb .sidebar .color-scheme-toggle::after {
+  width: 22px !important;
+  height: 22px !important;
+  left: calc(50% - 11px) !important;
+  top: calc(50% - 11px) !important;
+}
+html[data-cj-mobile="on"] body#phpbb .sidebar .color-scheme-toggle .icon > i,
+html[data-cj-mobile="on"] body#phpbb .sidebar .color-scheme-toggle .icon > i::before,
+html[data-cj-mobile="on"] body#phpbb .sidebar .forum-layout-toggle > i,
+html[data-cj-mobile="on"] body#phpbb .sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle > i,
+html[data-cj-mobile="on"] body#phpbb .sidebar #FAM-button > i,
+html[data-cj-mobile="on"] body#phpbb .sidebar #FAM-button-open > i,
+html[data-cj-mobile="on"] body#phpbb .sidebar .sidebar_bottom > a > i {
+  font-size: 22px !important;
+  line-height: 1 !important;
+}
+
+/* Le fond et le titre de la bannière restent sous le menu mobile. */
+html[data-cj-mobile="on"] body#phpbb #cj-banner-background,
+html[data-cj-mobile="on"] body#phpbb a#header {
+  top: var(--cj-banner-top, calc(55px + var(--cj-banner-height) * 0.022)) !important;
+}
+
+
+/* ==================== Barre latérale mobile ==================== */
+/* Ajout ciblé : seule la barre latérale devient mobile. */
+html body#phpbb #cj-rail-navbar.sidebar,
+html body #cj-rail-navbar.sidebar {
+  display: flex !important; flex-wrap: nowrap !important;
+  width: max-content !important; height: max-content !important;
+  min-width: 0 !important; min-height: 0 !important;
+  max-width: none !important; max-height: none !important;
+  padding: 8px !important; gap: 7px !important;
+  align-items: center !important; justify-content: flex-start !important;
+  overflow: visible !important; border: 1px solid #77777730 !important;
+  border-radius: 12px !important; transition: none !important;
+}
+html body #cj-rail-navbar .sidebar_top,
+html body #cj-rail-navbar .sidebar_bottom,
+html body #cj-rail-navbar #switcheroo,
+html body #cj-rail-navbar #switcheroo > .switcheroo__squircles { display: contents !important; }
+/* The mobile grid must not keep the bar vertical, or anchor its panels
+   to an individual button instead of the entire bar. */
+html body#phpbb #cj-rail-navbar #switcheroo > .switcheroo__squircles > .switcheroo__squircle {
+  position: static !important;
+  transform: none !important;
+  margin: 0 !important;
+}
+/* L'avatar est positionné dans SA case, jamais au centre de la barre. */
+html body#phpbb #cj-rail-navbar #switcheroo > .switcheroo__squircles > .switcheroo__squircle.active {
+  position: relative !important;
+  border: 0 !important;
+}
+html body #cj-rail-navbar .cj-rail-handle {
+  display: grid; place-items: center; flex: 0 0 36px;
+  width: 36px; height: 36px; padding: 7px; box-sizing: border-box;
+  color: var(--accentClr, #8582e8); background: transparent;
+  border: 0; border-radius: 8px; cursor: grab; touch-action: none;
+}
+html body #cj-rail-navbar .cj-rail-handle i { font-size: 20px; line-height: 1; pointer-events: none; }
+html body #cj-rail-navbar .cj-rail-handle:hover { background: #88888820; }
+html body #cj-rail-navbar .cj-rail-handle:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+html body #cj-rail-navbar[data-dragging] .cj-rail-handle { cursor: grabbing; }
+html body #cj-rail-navbar[data-dragging] { box-shadow: 0 0 0 2px var(--accentClr, #8582e8) !important; }
+html body #cj-rail-navbar #switcheroo .cj-switcheroo-dropdown {
+  transition: opacity .18s ease !important;
+  overflow: auto !important; min-width: 0 !important;
+}
+#cj-rail-guide { position: fixed; pointer-events: none; z-index: 99990;
+  border: 1px dashed #8582e880; border-radius: 16px; box-sizing: border-box; }
+.cj-rail-status { position: fixed; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+
+html body #cj-rail-navbar #switcheroo > .switcheroo__squircles > .active > .switcheroo__popper { white-space: normal !important; overflow-wrap: anywhere; overflow: auto !important; }
+html body #cj-rail-navbar #switcheroo > .switcheroo__squircles > .active > .switcheroo__popper::before { display: none !important; }
+html body #cj-rail-navbar #switcheroo .cj-switcheroo-dropdown__list { max-height: none !important; }
+html body #FAM { transition: opacity .2s ease, visibility .2s ease !important; }
+@media(prefers-reduced-motion:reduce){html body #FAM,html body #cj-rail-navbar #switcheroo .cj-switcheroo-dropdown{transition:none!important}}
+html body #cj-rail-navbar #switcheroo .cj-switcheroo-dropdown__list > .switcheroo__squircle {
+  flex: 0 0 auto !important; height: auto !important; min-height: 54px !important; max-height: none !important;
+}
+html body #cj-rail-navbar #switcheroo .cj-switcheroo-dropdown .switcheroo__popper-text {
+  white-space: normal !important; overflow-wrap: anywhere; text-overflow: clip !important; overflow: visible !important;
+}
+
+
+
+/* ==================== disposition des profils et fiches ==================== */
+html body#phpbb .post_row[data-cj-post-layout="full"] { grid-template-columns: minmax(0, 1fr) !important; }
+html body#phpbb [data-cj-profile-layout="full"] { display: none !important; }
+html body#phpbb .post_row[data-cj-post-layout="full"] > :is(.post_head, .post_message) {
+  grid-column: 1 / -1 !important; width: 100% !important; max-width: 100% !important;
+}
+html body#phpbb .post_row[data-cj-post-layout="standard"] { grid-template-columns: 240px minmax(0, 1fr) !important; }
+html body#phpbb [data-cj-profile-layout="standard"] { display: block !important; }
+html body#phpbb .post_row[data-cj-post-layout="standard"] > .post_head { grid-column: 2 !important; width: 100% !important; }
+html body#phpbb .post_row[data-cj-post-layout="standard"] > .post_message { grid-column: 2 !important; width: auto !important; max-width: 100% !important; }
+
