@@ -33710,3 +33710,84 @@ html:not([data-color-scheme="dark"]) body#phpbb
 .postbody .fiche-fond > .fiche-fond {
   background: #f8f6f2 !important;
 }
+
+/* TITRES SEULS — Plotlines et fiches de même structure */
+
+html body#phpbb .postbody
+.fiche-fond:has(> .fiche-simple-titre)
+:not(*) {
+  /* Aucun effet : repère de section uniquement. */
+}
+
+/* 1. Cadres contenant uniquement un titre et des sauts de ligne */
+html body#phpbb .postbody
+.fiche-fond:has(> .fiche-simple-titre):not(:has(> :not(.fiche-simple-titre, br))) {
+  padding: 18px 24px !important;
+  min-height: 0 !important;
+  height: auto !important;
+  line-height: 0 !important;
+}
+
+/* Retirer les sauts de ligne autour du titre */
+html body#phpbb .postbody
+.fiche-fond:has(> .fiche-simple-titre):not(:has(> :not(.fiche-simple-titre, br))) > br,
+html body#phpbb .postbody
+.fiche-fond:has(> .fiche-simple-titre):not(:has(> :not(.fiche-simple-titre, br)))
+> .fiche-simple-titre > br {
+  display: none !important;
+}
+
+/* Annuler les espacements prévus pour un titre suivi de texte */
+html body#phpbb .postbody
+.fiche-fond:has(> .fiche-simple-titre):not(:has(> :not(.fiche-simple-titre, br)))
+> .fiche-simple-titre {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+}
+
+html body#phpbb .postbody
+.fiche-fond:has(> .fiche-simple-titre):not(:has(> :not(.fiche-simple-titre, br)))
+> .fiche-simple-titre > t1 {
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.2 !important;
+}
+
+
+/* 2. REGISTRES — barre compacte et icônes plus lisibles */
+
+html body#phpbb .postbody .fiche-fond:has(> .tabs-onglets) {
+  padding: 8px 14px !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+html body#phpbb .postbody .fiche-fond > .tabs-onglets {
+  display: flex !important;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body#phpbb .postbody .tabs-onglets > a.btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 40px !important;
+  height: 40px !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+html body#phpbb .postbody .tabs-onglets > a.btn > i {
+  font-size: 21px !important;
+  line-height: 1 !important;
+}
