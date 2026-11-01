@@ -33650,3 +33650,55 @@ html body#phpbb [data-cj-profile-layout="standard"] { display: block !important;
 html body#phpbb .post_row[data-cj-post-layout="standard"] > .post_head { grid-column: 2 !important; width: 100% !important; }
 html body#phpbb .post_row[data-cj-post-layout="standard"] > .post_message { grid-column: 2 !important; width: auto !important; max-width: 100% !important; }
 
+
+
+/* PROFIL POPUP — défilement vertical uniquement */
+
+html body #wombat.cj-profile .cj-profile__main,
+html body #wombat.cj-profile .cj-profile__quick {
+  min-width: 0 !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+html body #wombat.cj-profile
+.user_profile.cj-profile__layout > .profile_infos.cj-profile__main {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+/* Les champs restent dans la largeur disponible. */
+html body #wombat.cj-profile :is(
+  .cj-profile__drawer,
+  .cj-profile__drawer-content,
+  .profile_field,
+  .field_uneditable
+) {
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  overflow-wrap: anywhere;
+}
+
+/* Les badges passent à la ligne. */
+html body #wombat.cj-profile .cj-badges-gallery {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  flex-wrap: wrap !important;
+}
+
+/* CLOUD NINE — fond extérieur transparent
+   Uniquement dans f92, pour les messages contenant un modèle. */
+
+/* Articles et commentaires */
+html body#phpbb:has(.navigation_chain > a[href^="/f92-"])
+.cjcloud-box:has(.cjcloud-mess-bottom > .cjmsdiary),
+
+/* Présentation du blog en premier message d'un sujet */
+html body#phpbb:has(.navigation_chain > a[href^="/f92-"])
+.blog_post:has(.postbody > .cjmsdiary) {
+  background: transparent !important;
+}
