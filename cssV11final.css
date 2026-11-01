@@ -33702,3 +33702,11 @@ html body#phpbb:has(.navigation_chain > a[href^="/f92-"])
 .blog_post:has(.postbody > .cjmsdiary) {
   background: transparent !important;
 }
+
+
+/* MODE CLAIR — distinguer les fonds imbriqués */
+
+html:not([data-color-scheme="dark"]) body#phpbb
+.postbody .fiche-fond > .fiche-fond {
+  background: #f8f6f2 !important;
+}
