@@ -57,6 +57,7 @@
      • Barre latérale déplaçable
      • Lettres animées des titres de forum
      • Zone de rédaction pleine largeur sur Messenger
+     • BIDOUILLES SORTIES DU JAVASCRIPT POUR SOULAGER LA NAVIGATION
 
 */
 
@@ -33111,28 +33112,11 @@ html body #FAM {
   margin: 0 !important;
 }
 
+/* BIDOUILLES SORTIES DU JAVASCRIPT POUR SOULAGER LA NAVIGATION */
 
-/* CONCRETE JUNGLE — styles sortis des JavaScript
-   À ajouter à la FIN du CSS externe de mise en page.
-   Installer ce CSS AVANT les versions JavaScript allégées.
-   Les couleurs existantes sont conservées.
-
-   SOMMAIRE — Ctrl + F
-   CJ-10 : Copier le contenu des blocs de code
-   CJ-42 : Barre latérale mobile
-   CJ-44 : Version mobile
-   CJ-53 : Bannière canvas
-   CJ-56 : Messenger : lecture des contenus sociaux
-   CJ-58 : Bouton UserWay
-   CJ-60 : Symboles des groupes
-   CJ-61 : Finitions, navigation, Cloud Nine et SMS
-   CJ-34 : disposition des profils et fiches
-*/
-
-/* ==================== CJ-10 — Copier le contenu des blocs de code ==================== */
 .fae_copy-code{float:right;cursor:pointer;}.fae_copy-code:hover{text-decoration:underline}
 
-/* ==================== CJ-61 — Finitions, navigation, Cloud Nine et SMS ==================== */
+/* =====Finitions, navigation, Cloud Nine et SMS===== */
 
     .topicslist-stats { flex-shrink:0!important; min-width:90px!important; width:auto!important; white-space:nowrap!important; text-align:center!important; }
     .newpm_button a::after { content:none!important; }
@@ -33156,10 +33140,9 @@ html body #FAM {
     .cjcloud-date { margin-top:12px; font-size:.85em; opacity:.7; }
     @media(max-width:600px){.cjcloud-box{grid-template-columns:minmax(0,1fr);padding:12px;}}
   
-/* CJ — navigation basse, modération, blogs et SMS.
-   Chargé par le script de finitions ; conserver ce fichier comme correctif CSS. */
+/* navigation basse, modération, blogs et SMS.*/
 
-/* Navigation également disponible au pied des sujets et listes. */
+
 .cj-bottom-navigation {
   clear: both;
   display: block;
@@ -33181,7 +33164,7 @@ html body #FAM {
   margin: 0 8px 0 0; padding: 0;
 }
 
-/* Les actions restent les mêmes ; seules leurs icônes changent. */
+
 form.cj-moderation-tools {
   float: none !important;
   clear: both;
@@ -33209,7 +33192,7 @@ form.cj-moderation-tools {
 .cj-moderation-tools .cj-mod-action[data-action="delete"] { color: var(--textColorAccent) !important; }
 .cj-mod-action::before { content: attr(data-icon); font-family: 'CJ Sujet Icons'; font-weight: 900; }
 
-/* Deux lignes stables : nombre + libellé, puis nombre + vues. */
+
 .bloglist_details {
   display: block !important; flex: 0 0 106px !important;
   width: 106px !important; min-width: 106px !important;
@@ -33220,7 +33203,7 @@ form.cj-moderation-tools {
 .bloglist_details br { display: block !important; }
 .bloglist_infos2 { gap: 12px !important; align-items: center !important; }
 
-/* Boutons des blogs identiques aux actions des messages classiques. */
+/* Boutons des blogs */
 :is(.blog_details,.sms-edit,.cjcloud-edit) .profile-icons {
   display: flex !important; align-items: center; justify-content: flex-end;
   gap: 12px; list-style: none; margin: 0 !important; padding: 0 !important;
@@ -33242,7 +33225,7 @@ form.cj-moderation-tools {
 :is(.blog_details,.sms-edit,.cjcloud-edit) .profile-icons a[href*="mode=delete"] { color: #d26a70 !important; }
 :is(.blog_details,.sms-edit,.cjcloud-edit) .profile-icons a:hover { color: var(--accentClr) !important; }
 
-/* Direct Messages uniquement : Cloud Nine possède ses propres classes. */
+/* Direct Messages uniquement */
 body[data-cj-space="sms"] .sms-first {
   display: grid !important; grid-template-columns: 150px minmax(0,1fr) !important;
   align-items: center; gap: 24px !important; width: 100% !important;
@@ -33301,13 +33284,13 @@ body[data-cj-space="sms"] .sms-date { margin-top: 8px; padding: 0 !important; fo
   body[data-cj-space="sms"] .sms-ava img { width: 40px !important; height: 40px !important; }
 }
 
-/* Sombre uniquement : les pseudos sans groupe se distinguent du rose des groupes. */
+/* Sombre uniquement */
 html[data-color-scheme="dark"] :is(#online_users,#last_connected) a[href^="/u"]:not(:has(.usr_grp_clr)) {
   color: #a6cdde !important;
 }
 
 
-/* ==================== Messenger : lecture des contenus sociaux ==================== */
+/* ===== Messenger : lecture des contenus sociaux ========= */
 
   #FAM .FAM-msg-content,#FAM .FAM-msg-box,#FAM .FAM-msg-text { min-width:0; max-width:100%; box-sizing:border-box; }
   #FAM .FAM-cjfam-reader { width:100%; min-width:0; line-height:1.55; overflow-wrap:anywhere; }
@@ -33325,7 +33308,7 @@ html[data-color-scheme="dark"] :is(#online_users,#last_connected) a[href^="/u"]:
   #FAM .FAM-cjfam-reader [class*="panel"] { display:block!important; }
 
 
-/* ==================== Symboles des groupes ==================== */
+/* ======= Symboles des groupes ========= */
 /* Groupes CJ : 4 wild, 5 domesticated, 6 starved, 7 caged. */
 html body :is(.post_pseudo, .cj-profile__name) .usr_grp_clr.group-3::after { content: none !important; }
 html body :is(.post_pseudo, .cj-profile__name) .usr_grp_clr.group-4 { --cj-group-symbol: "\e4dc"; }
@@ -33350,10 +33333,10 @@ html body :is(.post_pseudo, .cj-profile__name) .usr_grp_clr.group-6::after { con
 html body :is(.post_pseudo, .cj-profile__name) .usr_grp_clr.group-7::after { content: "\f7a9" !important; }
 
 
-/* ==================== Bouton UserWay ==================== */
+
 .sidebar #cj-userway-button{display:flex!important;align-items:center;justify-content:center;flex:0 0 auto;width:38px;height:38px;min-width:0;min-height:0;padding:7px!important;margin:0 auto 4px!important;box-sizing:border-box;border:0!important;border-radius:50%;background:transparent!important;color:var(--one,currentColor)!important;cursor:pointer;line-height:1;}.sidebar #cj-userway-button svg{display:block;width:24px;height:24px;flex:none;pointer-events:none;}.sidebar #cj-userway-button:hover{box-shadow:inset 0 0 0 1px currentColor;}.sidebar #cj-userway-button:focus-visible{outline:2px solid currentColor!important;outline-offset:2px;}
 
-/* ==================== Bannière canvas ==================== */
+
 html body #cj-banner-background{overflow:hidden!important;}html body #cj-banner-background.cj-canvas-ready{background-image:none!important;}html body #cj-banner-background>canvas.cj-banner-canvas{display:block!important;position:absolute!important;visibility:hidden!important;width:calc(100% / .969)!important;height:calc(100% / .943)!important;left:calc(-.011 * 100% / .969)!important;top:calc(-.022 * 100% / .943)!important;max-width:none!important;max-height:none!important;min-width:0!important;margin:0!important;padding:0!important;border:0!important;pointer-events:none!important;}html body #cj-banner-background.cj-canvas-ready>canvas.cj-banner-canvas{visibility:visible!important;}
 
 /* ==================== Version mobile ==================== */
@@ -33395,7 +33378,7 @@ html[data-cj-mobile="on"] body#phpbb #cj-mobile-forum-frame > .main_forum {
   transition: none !important;
 }
 
-/* Même disposition du QEEL sur le forum réduit. */
+
 html[data-cj-mobile="on"] body#phpbb .cj-qeel {
   grid-template-columns: var(--qeel-side, 100px) minmax(0, 1fr) var(--qeel-side, 100px) !important;
   grid-template-rows: auto !important;
@@ -33570,15 +33553,14 @@ html[data-cj-mobile="on"] body#phpbb .sidebar .sidebar_bottom > a > i {
   line-height: 1 !important;
 }
 
-/* Le fond et le titre de la bannière restent sous le menu mobile. */
+
 html[data-cj-mobile="on"] body#phpbb #cj-banner-background,
 html[data-cj-mobile="on"] body#phpbb a#header {
   top: var(--cj-banner-top, calc(55px + var(--cj-banner-height) * 0.022)) !important;
 }
 
 
-/* ==================== Barre latérale mobile ==================== */
-/* Ajout ciblé : seule la barre latérale devient mobile. */
+
 html body#phpbb #cj-rail-navbar.sidebar,
 html body #cj-rail-navbar.sidebar {
   display: flex !important; flex-wrap: nowrap !important;
@@ -33594,14 +33576,13 @@ html body #cj-rail-navbar .sidebar_top,
 html body #cj-rail-navbar .sidebar_bottom,
 html body #cj-rail-navbar #switcheroo,
 html body #cj-rail-navbar #switcheroo > .switcheroo__squircles { display: contents !important; }
-/* The mobile grid must not keep the bar vertical, or anchor its panels
-   to an individual button instead of the entire bar. */
+
 html body#phpbb #cj-rail-navbar #switcheroo > .switcheroo__squircles > .switcheroo__squircle {
   position: static !important;
   transform: none !important;
   margin: 0 !important;
 }
-/* L'avatar est positionné dans SA case, jamais au centre de la barre. */
+
 html body#phpbb #cj-rail-navbar #switcheroo > .switcheroo__squircles > .switcheroo__squircle.active {
   position: relative !important;
   border: 0 !important;
@@ -33639,7 +33620,8 @@ html body #cj-rail-navbar #switcheroo .cj-switcheroo-dropdown .switcheroo__poppe
 
 
 
-/* ==================== disposition des profils et fiches ==================== */
+/* ===== disposition des profils et fiches =========== */
+
 html body#phpbb .post_row[data-cj-post-layout="full"] { grid-template-columns: minmax(0, 1fr) !important; }
 html body#phpbb [data-cj-profile-layout="full"] { display: none !important; }
 html body#phpbb .post_row[data-cj-post-layout="full"] > :is(.post_head, .post_message) {
@@ -33652,7 +33634,7 @@ html body#phpbb .post_row[data-cj-post-layout="standard"] > .post_message { grid
 
 
 
-/* PROFIL POPUP — défilement vertical uniquement */
+
 
 html body #wombat.cj-profile .cj-profile__main,
 html body #wombat.cj-profile .cj-profile__quick {
@@ -33670,7 +33652,6 @@ html body #wombat.cj-profile
   overflow-y: auto !important;
 }
 
-/* Les champs restent dans la largeur disponible. */
 html body #wombat.cj-profile :is(
   .cj-profile__drawer,
   .cj-profile__drawer-content,
@@ -33682,7 +33663,6 @@ html body #wombat.cj-profile :is(
   overflow-wrap: anywhere;
 }
 
-/* Les badges passent à la ligne. */
 html body #wombat.cj-profile .cj-badges-gallery {
   min-width: 0 !important;
   max-width: 100% !important;
@@ -33690,10 +33670,9 @@ html body #wombat.cj-profile .cj-badges-gallery {
   flex-wrap: wrap !important;
 }
 
-/* CLOUD NINE — fond extérieur transparent
-   Uniquement dans f92, pour les messages contenant un modèle. */
 
-/* Articles et commentaires */
+
+
 html body#phpbb:has(.navigation_chain > a[href^="/f92-"])
 .cjcloud-box:has(.cjcloud-mess-bottom > .cjmsdiary),
 
@@ -33704,14 +33683,11 @@ html body#phpbb:has(.navigation_chain > a[href^="/f92-"])
 }
 
 
-/* MODE CLAIR — distinguer les fonds imbriqués */
 
 html:not([data-color-scheme="dark"]) body#phpbb
 .postbody .fiche-fond > .fiche-fond {
   background: #f8f6f2 !important;
 }
-
-/* TITRES SEULS — Plotlines et fiches de même structure */
 
 html body#phpbb .postbody
 .fiche-fond:has(> .fiche-simple-titre)
@@ -33719,7 +33695,7 @@ html body#phpbb .postbody
   /* Aucun effet : repère de section uniquement. */
 }
 
-/* 1. Cadres contenant uniquement un titre et des sauts de ligne */
+
 html body#phpbb .postbody
 .fiche-fond:has(> .fiche-simple-titre):not(:has(> :not(.fiche-simple-titre, br))) {
   padding: 18px 24px !important;
@@ -33728,7 +33704,7 @@ html body#phpbb .postbody
   line-height: 0 !important;
 }
 
-/* Retirer les sauts de ligne autour du titre */
+
 html body#phpbb .postbody
 .fiche-fond:has(> .fiche-simple-titre):not(:has(> :not(.fiche-simple-titre, br))) > br,
 html body#phpbb .postbody
@@ -33737,7 +33713,7 @@ html body#phpbb .postbody
   display: none !important;
 }
 
-/* Annuler les espacements prévus pour un titre suivi de texte */
+
 html body#phpbb .postbody
 .fiche-fond:has(> .fiche-simple-titre):not(:has(> :not(.fiche-simple-titre, br)))
 > .fiche-simple-titre {
@@ -33756,7 +33732,6 @@ html body#phpbb .postbody
 }
 
 
-/* 2. REGISTRES — barre compacte et icônes plus lisibles */
 
 html body#phpbb .postbody .fiche-fond:has(> .tabs-onglets) {
   padding: 8px 14px !important;
