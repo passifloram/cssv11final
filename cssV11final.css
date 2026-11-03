@@ -33766,3 +33766,84 @@ html body#phpbb .postbody .tabs-onglets > a.btn > i {
   font-size: 21px !important;
   line-height: 1 !important;
 }
+
+
+/* Crush Hour : ouverture mise en forme dès la lecture du HTML. */
+
+html body#phpbb .cj-topic .post_row:has(> .post_message > .postbody.content > .tinder-app) {
+  display: block !important;
+  width: 430px !important;
+  max-width: calc(100% - 30px) !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 20px auto 30px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body#phpbb .cj-topic .post_row:has(> .post_message > .postbody.content > .tinder-app) > :is(.post_head, .post_profile, .signature_div) {
+  display: none !important;
+}
+
+html body#phpbb .cj-topic .post_row > .post_message:has(> .postbody.content > .tinder-app) {
+  display: flex !important;
+  flex-direction: column !important;
+  position: static !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body#phpbb .cj-topic .post_message > .postbody.content:has(> .tinder-app) {
+  display: block !important;
+  order: 1 !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body#phpbb .cj-topic .post_message:has(> .postbody.content > .tinder-app) > .post_details {
+  display: flex !important;
+  order: 2 !important;
+  align-self: center !important;
+  width: 390px !important;
+  max-width: 100% !important;
+  min-height: 16px !important;
+  height: auto !important;
+  margin: 5px auto 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+html body#phpbb .cj-topic .post_message:has(> .postbody.content > .tinder-app) > .signature_div,
+html body#phpbb .cj-topic .post_message:has(> .postbody.content > .tinder-app) > .post_details > .post_date,
+html body#phpbb .cj-topic .post_message > .postbody.content > .tinder-app br {
+  display: none !important;
+}
+
+/* Les <br> masqués restent des enfants du DOM avant leur nettoyage JS.
+   first/last-of-type retrouvent les deux portraits malgré ces balises. */
+html body#phpbb .cj-topic .postbody.content > .tinder-app .tinder-match-profile:first-of-type {
+  margin-left: -88px;
+  transform: rotate(-7deg);
+}
+
+html body#phpbb .cj-topic .postbody.content > .tinder-app .tinder-match-profile:last-of-type {
+  margin-left: 88px;
+  transform: rotate(7deg);
+}
