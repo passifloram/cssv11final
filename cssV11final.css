@@ -33847,3 +33847,20 @@ html body#phpbb .cj-topic .postbody.content > .tinder-app .tinder-match-profile:
   margin-left: 88px;
   transform: rotate(7deg);
 }
+
+
+/* Notifications mobiles : hauteur réelle de la navbar + espace de 8 px.
+   Variables déjà mises à jour par le script de navigation installé. */
+html[data-cj-mobile="on"][data-cj-isolated="on"] body#phpbb #fa_toolbar {
+  z-index: 10002 !important;
+}
+
+html[data-cj-mobile="on"][data-cj-isolated="on"] body#phpbb #fa_toolbar #fa_right ul#notif_list {
+  top: var(--cj-banner-top, 65px) !important;
+  max-height: max(0px, calc(var(--cj-overlay-height, 100vh) - var(--cj-banner-top, 65px) - 8px)) !important;
+  max-height: max(0px, calc(min(100dvh, var(--cj-overlay-height, 100dvh)) - var(--cj-banner-top, 65px) - 8px)) !important;
+  overflow-y: auto !important;
+  overscroll-behavior-y: contain;
+  touch-action: pan-y;
+}
+
